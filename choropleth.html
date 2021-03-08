@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Earthquakes by State on US Map 2010-2015</title>
+		<script type="text/javascript" src="../lib/d3.v5.min.js"></script>
+		<script type="text/javascript" src="./lib/d3-dsv.min.js"></script>
+		<script type="text/javascript" src="./lib/d3-fetch.min.js"></script>
+		<script type="text/javascript" src="./lib/d3-scale-chromatic.v1.min.js"></script>
+		<script type="text/javascript" src="./lib/d3-tip.min.js"></script>
+		<script type="text/javascript" src="./lib/topojson.v2.min.js"></script>
+
+                <style type="text/css">
+
+                  .label {
+                       font-family: sans-serif;
+                       font-size: 12px;
+                       font-weight: bold;
+                       fill: black;
+                       text-anchor: middle;
+                       dominant-baseline: middle;
+                       }
+
+                  .legend {
+                       font-family: sans-serif;
+                       font-size: 12px;
+                       fill: black;
+                       text-anchor: left;
+                       dominant-baseline: middle;
+                       }
+
+                  .pop {
+                       font-family: sans-serif;
+                       font-size: 12px;
+                       fill: white;
+                       text-anchor: left;
+                       dominant-baseline: hanging;
+                       }
+
+                  .block {
+                       stroke: #000;
+                       stroke-width: 0.4px;}
+
+
+                  .block:hover {
+                       stroke: blue;
+                       stroke-width: 2px;}
+
+
+.d3-tip {
+  line-height: 1.1;
+  font-weight: bold;
+  font-size: 10.5px;
+  font-family: sans-serif;
+  padding: 4.5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 4px;
+
+}
+
+
+
+               </style>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+
+			var w = 800;
+			var h = w/1.7;
+                        var xpadL = 20;
+                        var xpadR = 100;
+                        var ypad = 20;
+                        var xleg = w-xpadR;
+                        var yleg = h/2 - ypad - 60;
+                        var hleg = 20;
+                        var wleg = 25;
+                        var ht = 40;
+
+                        var projection = d3.geoAlbersUsa().translate([ xpadL+(w-xpadL-xpadR)/2, h/2 ]).scale([w]);
+                        var path = d3.geoPath().projection(projection);
+
+                        var States = {};
+
+                        var svg = d3.select("body").append("svg").attr("width",w).attr("height",h);
+                     
+
+                        var promises = [ d3.json('states-10m.json'),
+                                         d3.csv("state-earthquakes.csv", function(d) { 
+                                             States[d.States] = {"region": d.Region, "count": +d['Total Earthquakes']};
+    
+                                              }) ];
+                        var tip = d3.tip().attr('class', 'd3-tip').offset([0,0])
+                                     .html(function(d) {
+                       return "<strong>State: " + d.properties.name + "<br>Region: " + States[d.properties.name].region + "<br>Earthquakes: " + d.properties.count + "</strong>";
+  })
+
+                        Promise.all(promises).then(ready);
+                        function ready([us]) {
+
+                             var max_count = 0;
+                             for (let k in States) if (States[k].count > max_count) max_count = States[k].count; 
+
+
+                             domain = [0];
+                             for (var i = 1; i < max_count; ) {
+                                  domain.push(i);
+                                  i *= 5;
+                                  domain.push(i);
+                                  i *= 2;
+                             }
+                             
+                      
+                             colors = ['#fff5f0','#fee0d2','#fcbba1','#fc9272','#fb6a4a','#ef3b2c','#cb181d','#a50f15','#67000d'];
+                             n_colors = colors.length;
+                             domain = domain.slice(0,n_colors);
+
+                             function cScale(x) {
+                                if (x >= domain[n_colors-1]) return colors[n_colors-1];
+                                for (var i = 0; i < n_colors-1; i++) {
+                                     if (x >= domain[i] && x<domain[i+1]) return colors[i];
+                                     }
+                             }
+
+ 
+                             map_states = topojson.feature(us, us.objects.states).features;
+
+
+                             for (let k in map_states) { 
+                                  state = map_states[k].properties.name
+                                  if (state in States) map_states[k].properties.count = States[state].count;
+                                  else map_states[k].properties.count = 0; };
+
+                             var map = svg.append("g")
+                                .selectAll("path")
+                                .data(map_states)
+                                .enter().append("path")
+                                .attr("d", path)
+                                .attr("fill", function(d) {return cScale(d.properties.count);} )
+                                .attr('class','block').attr("stroke-dasharray",[2,1]);
+
+                            svg.call(tip);
+
+                                map.on("mouseover", tip.show)
+                                   .on("mouseout", tip.hide);
+
+                                // legend
+
+		        	svg.selectAll("legend_rect").data(colors).enter().append("rect")
+                                   .attr("x", xleg)
+                                   .attr("y", function(d,i) {return yleg + i*(hleg+3); })
+                                   .attr("width",wleg).attr("height",hleg)
+                                   .attr("fill", function(d) {return d;});
+
+     		        	svg.selectAll("legend_text").data(colors).enter().append("text")
+                                   .attr("x", xleg + wleg + 3)
+                                   .attr("y", function(d,i) {return yleg + i*(hleg+3) + hleg/2 + 5 ;})
+                                   .attr("class","legend")
+                                   .text(function(d,i) {return domain[i]});
+
+                                svg.append("text")
+                                   .attr("x", xleg + 20)
+                                   .attr("y", yleg - 10)
+                                   .attr("class","label")
+                                   .text("Earthquake Frequency");
+
+
+                        }
+
+                
+        	       
+ 
+		</script>
+
+
+	</body>
+</html>
