@@ -67,8 +67,27 @@
 					var lastName = document.getElementById("lastName").value;
 					console.log("OK!@");
 					console.log("Patient ID: '" + pId + "', Last Name: '" + lastName +"'" );
-				});
+					
+					var n = data.length;
+					var flag = "";
+					for (int i=0; i<n; i++) {
+						if (pId == data[i][0] && lastName == data[i][1]) {
+							flag = pId;
+							break;
+						}
+					}
+					
+					if (flag == "")
+						console.log("No match!");
+					else
+						console.log("Welcome, " + lastName + " , " + flag);
+					
 			   
+					
+					
+				});
+				
+
 						   
 						   
 
