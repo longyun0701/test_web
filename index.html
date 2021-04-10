@@ -61,9 +61,13 @@
 				svg.append("text").attr("class","button_text")
 					.attr("x", 50).attr("y", 25)
 					.text("Retrieve");
-
-						  
-						   
+				
+				svg.on("click", function() {
+					var pId = document.getElementById("patientId").value;
+					var lastName = document.getElementById("lastName").value;
+					console.log("OK!@");
+					console.log("Patient ID: '" + pId + "', Last Name: '" + lastName +"'" );
+			   
 						   
 						   
 
