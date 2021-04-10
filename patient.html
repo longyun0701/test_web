@@ -168,9 +168,9 @@ body {
 	    <div>
               <form name="drop" action="" method="">
               <select id="gender"  name="gender"  style = "height:20px;font-size:14px;font-family:sans-serif;border-radius:1px">   
-              <option   value="female" selected="selected">Female</option>    
-              <option   value="male">Male</option>      
-              <option   value="other">Other</option>       
+              <option   value="F" selected="selected">Female</option>    
+              <option   value="M">Male</option>      
+              <option   value="O">Other</option>       
 
               </select>
               </form>
@@ -465,6 +465,16 @@ body {
 				document.getElementById('sys-bp').value = d["Systolic Blood Pressure"];
 				document.getElementById('dia-bp').value = d["Diastolic Blood Pressure"];
 				document.getElementById('fever-or-chills').checked = +d["Fever (finding) / Chill (finding)"];
+				document.getElementById('sore-throat').checked = +d["Streptococcal sore throat (disorder)"];
+				document.getElementById('muscle-or-body-aches').checked = +d["Muscle pain (finding)"];
+				document.getElementById('cough').checked = +d["Cough (finding)"];
+				document.getElementById('diarrhea').checked = +d["Diarrhea symptom (finding)"];
+				document.getElementById('new-loss-of-taste-or-smell').checked = +d["Loss of taste (finding)"];
+				document.getElementById('fatigue').checked = +d["Fatigue (finding)"];
+				document.getElementById('cogestion-or-runny-nose').checked = +d["Nasal congestion (finding)"];
+				document.getElementById('nausea-or-vomiting').checked = +d["Nausea (finding) / Vomiting symptom (finding)"];
+				document.getElementById('headache').checked = +d["Headache (finding)"];
+				ocument.getElementById('shortness-of-breath-or-difficulty-breathing').checked = +d["Respiratory distress (finding)"];
 			}
 				
 			
@@ -476,7 +486,6 @@ body {
 		
 		
 	</script>
-	
 	
 
 </body>
