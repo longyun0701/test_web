@@ -428,6 +428,16 @@ body {
 		console.log(document.URL);
 		var pid = document.URL.split("?pid=")[1];
 		console.log(pid);
+		
+		d3.csv("src/patient_data.csv", function(csvdata) {
+                              return csvdata;   
+			   }).then(function(data) {
+			console.log(data);
+			
+			
+		})  //end of then
+		
+
 
 		
 		
