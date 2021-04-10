@@ -64,6 +64,8 @@
 	    <div>Password:</div>
 	    <input class="input" id="clinicianPassword">
 	    <div class="clinician_button"> </div>
+	    
+	     <div class="no_match_"> </div> <br>
       
 
     </main>
@@ -135,8 +137,8 @@
 					}
 
 					else {
-						//var svg_nomatch = d3.select(".no_match").append("svg");
-						//svg.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
+						var svg_nomatch_ = d3.select(".no_match_").append("svg_nomatch_");
+						svg.append("text").attr("class","nomatch_text").text("Invalid Log ID or Password!");
 						
 					}
 				});
