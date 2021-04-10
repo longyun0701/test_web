@@ -49,7 +49,7 @@
       <br><br><br>
 
       I am a returning patient. <br>
-	    <div>Patient IDX:</div>
+	    <div>Patient ID:</div>
 	    <input class="input" id="patientId">
 	    <div>Last name:</div>
 	    <input class="input" id="lastName">
@@ -120,13 +120,13 @@
 						   
 
                          }) // end of then 
-    			 var w = 100, h = 40;
-                         var svg_clinician = d3.select(".clinician_button").append("svg_clinician").attr("width", w).attr("height", h);
+    			 var w_ = 100, h_ = 40;
+                         var svg_clinician = d3.select(".clinician_button").append("svg_clinician").attr("width", w_).attr("height", h_);
 				svg_clinician.append("rect")
 					.attr("x", "10%").attr("y", "10%").attr("width", "80%").attr("height", "80%").attr("fill", "blue");
 				
 				svg_clinician.append("text").attr("class","button_text")
-					.attr("x", w/2).attr("y", h/2+6-1)
+					.attr("x", w_/2).attr("y", h_/2+6-1)
 					.text("Log In");
 				
 				svg_clinician.on("click", function() {
