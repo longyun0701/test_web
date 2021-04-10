@@ -36,10 +36,11 @@
       <br><br><br>
 
       I am a returning patient. <br>
-         <div>Patient ID:</div>         
-	  <input class="input" id="patientId">
-            <div>Last name:</div>         
-	  <input class="input" id="lastName">       
+	    <div>Patient ID:</div>
+	    <input class="input" id="patientId">
+	    <div>Last name:</div>
+	    <input class="input" id="lastName">
+	    <div class="button"> </div>
 
        <a href="patient.html"> Retrieve my information </a> <br>
 
@@ -54,9 +55,19 @@
                         d3.csv("src/patient_data.csv", function(csvdata) {
                               return [    csvdata["Patient ID"],
                                           csvdata["Last name"] ];   
-			   }).then(function(data) { console.log(data);
+			   }).then(function(data) {
+				console.log(data);
+				var svg = d3.select(".button").append("svg").attr("width", 100).attr("height", 50);
+				svg.append("text").attr("class","button_text")
+					.attr("x", 50).attr("y", 25)
+					.text("Retrieve");
 
-}) // end of then 
+						  
+						   
+						   
+						   
+
+                         }) // end of then 
     
 
 
