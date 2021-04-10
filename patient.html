@@ -180,7 +180,7 @@ body {
         <div class="small-card">
           <div>Date of Birth:</div>
           yyyy：
-	<select >
+	<select id="dob_yyyy">
 	<script>
 	var a=new Date().getFullYear()
 	for(i=1900;i<a+1;i++)
@@ -188,14 +188,14 @@ body {
 	</script>
 	</select>
 	mm：
-	<select>
+	<select id="dob_mm">
 	<script>
 	for(i=1;i<13;i++)
 	document.write("<option value='"+i+"'>"+i+"</option>")
 	</script>
 	</select>
 	dd：
-	<select>
+	<select id="dob_dd">
 	<script>
 	for(i=1;i<32;i++)
 	document.write("<option value='"+i+"'>"+i+"</option>")
@@ -441,6 +441,22 @@ body {
                               return csvdata;   
 			   }).then(function(data) {
 			console.log(data);
+			
+			var n = data.length;
+			
+			for (var i=0; i<n; i++) {
+				d = data[i];
+				if (pid!=d["Patient ID"]) continue;
+				
+				console.log(d);
+				document.getElementById('height').value = d["Body Height"];
+				document.getElementById('weight').value = d["Body Weight"];
+				document.getElementById('race').value = d["Race"];
+				DOB = d["Birthdate"].split("/");
+				document.getElementById('dob_yyyy').value = DOB[0];
+				document.getElementById('dob_mm').value = DOB[1];
+				document.getElementById('dob_dd').value = DOB[2];
+				
 			
 			
 		})  //end of then
