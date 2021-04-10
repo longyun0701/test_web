@@ -49,7 +49,7 @@
 	    <input class="input" id="lastName">
 	    <div class="button"> </div>
 
-       <a href="patient.html"> Retrieve my information </a> <br>
+       <div class="no_match"> </div> <br>
 
       <br><br><br>
        I am a clinician <br>
@@ -77,7 +77,6 @@
 				svg.on("click", function() {
 					var pId = document.getElementById("patientId").value;
 					var lastName = document.getElementById("lastName").value;
-					console.log("OK!@");
 					console.log("Patient ID: '" + pId + "', Last Name: '" + lastName +"'" );
 					
 					var n = data.length;
@@ -89,10 +88,14 @@
 						}
 					}
 					
-					if (flag == "")
-						console.log("No match!");
-					else
-						console.log("Welcome, " + lastName + " , ID: " + flag);
+					if (flag == "") {
+						var svg_nomatch = d3.select(".no_match").append("svg").attr("width", w).attr("height", h);
+						svg.append("text").text("Invalid Patient ID or Last Name!");
+					}
+
+					else {
+						window.location = "patient.html?pid="+flag;
+					}
 					
 			   
 					
