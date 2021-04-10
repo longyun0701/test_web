@@ -478,6 +478,19 @@ body {
 				document.getElementById('shortness-of-breath-or-difficulty-breathing').checked = +d["Respiratory distress (finding)"];
 				
 				
+				var radios = document.getElementsByName('diabetes');
+				if (+d["MC1"]) {
+     					radios[0].checked = true;
+				}
+				if (+d["MC2"]) {
+     					radios[1].checked = true;
+				}
+				if (+d["MC3"]) {
+     					radios[2].checked = true;
+				}
+				if (+d["MC4"]) {
+     					radios[3].checked = true;
+				}
 				
 				
 				document.getElementById('MC5').checked = +d["MC5"];
