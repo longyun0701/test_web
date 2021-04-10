@@ -100,7 +100,7 @@
 					}
 					
 					if (flag == "") {
-						var svg_nomatch = d3.select(".no_match").append("svg");
+						var svg_nomatch = d3.select(".no_match").append("svg_nomatch");
 						svg_nomatch.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
 					}
 
@@ -119,7 +119,7 @@
 
                          }) // end of then 
     
-                         var svg_clinician = d3.select(".clinician_button").append("svg").attr("width", w).attr("height", h);
+                         var svg_clinician = d3.select(".clinician_button").append("svg_clinician").attr("width", w).attr("height", h);
 				svg_clinician.append("rect")
 					.attr("x", "10%").attr("y", "10%").attr("width", "80%").attr("height", "80%").attr("fill", "blue");
 				
@@ -135,8 +135,8 @@
 					}
 
 					else {
-						var svg_nomatch = d3.select(".no_match").append("svg");
-						svg.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
+						//var svg_nomatch = d3.select(".no_match").append("svg");
+						//svg.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
 						
 					}
 					
