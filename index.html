@@ -36,7 +36,7 @@
       <br><br><br>
 
       I am a returning patient. <br>
-	    <div>Patient IDx:</div>
+	    <div>Patient ID:</div>
 	    <input class="input" id="patientId">
 	    <div>Last name:</div>
 	    <input class="input" id="lastName">
@@ -70,7 +70,7 @@
 					
 					var n = data.length;
 					var flag = "";
-					for (int i=0; i<n; i++) {
+					for (var i=0; i<n; i++) {
 						if (pId == data[i][0] && lastName == data[i][1]) {
 							flag = pId;
 							break;
@@ -80,7 +80,7 @@
 					if (flag == "")
 						console.log("No match!");
 					else
-						console.log("Welcome, " + lastName + " , " + flag);
+						console.log("Welcome, " + lastName + " , ID: " + flag);
 					
 			   
 					
