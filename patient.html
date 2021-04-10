@@ -449,6 +449,8 @@ body {
 				if (pid!=d["Patient ID"]) continue;
 				
 				console.log(d);
+				document.getElementById('patient-name').value = d["First name"] + " " + d["Last name"];
+				document.getElementById('gender').value = d["Gender"];
 				document.getElementById('height').value = d["Body Height"];
 				document.getElementById('weight').value = d["Body Weight"];
 				document.getElementById('race').value = d["Race"];
@@ -456,6 +458,12 @@ body {
 				document.getElementById('dob_yyyy').value = DOB[0];
 				document.getElementById('dob_mm').value = DOB[1];
 				document.getElementById('dob_dd').value = DOB[2];
+				document.getElementById('oral-temperature').value = d["Body temperature"];
+				document.getElementById('pulse-rate').value = d["Heart rate"];
+				document.getElementById('oxygen-saturation').value = d["Oxygen saturation in Arterial blood"];
+				document.getElementById('breathing-rate').value = d["Respiratory rate"];
+				document.getElementById('sys-bp').value = d["Systolic Blood Pressure"];
+				document.getElementById('dia-bp').value = d["Diastolic Blood Pressure"];
 				document.getElementById('fever-or-chills').checked = +d["Fever (finding) / Chill (finding)"];
 			}
 				
@@ -468,7 +476,8 @@ body {
 		
 		
 	</script>
-
+	
+	
 
 </body>
 
