@@ -90,7 +90,7 @@
 					
 					if (flag == "") {
 						var svg_nomatch = d3.select(".no_match").append("svg").attr("width", w).attr("height", h);
-						svg.append("text").text("Invalid Patient ID or Last Name!");
+						svg.append("text").attr('fill','red').text("Invalid Patient ID or Last Name!");
 					}
 
 					else {
