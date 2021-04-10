@@ -449,7 +449,7 @@ body {
 				if (pid!=d["Patient ID"]) continue;
 				
 				console.log(d);
-				document.getElementById('patient_id').value = d["Patient ID"];
+				document.getElementById('patient_id').innerHTML = pid;
 				document.getElementById('patient-name').value = d["First name"] + " " + d["Last name"];
 				document.getElementById('gender').value = d["Gender"];
 				document.getElementById('height').value = d["Body Height"];
@@ -476,10 +476,10 @@ body {
 				document.getElementById('nausea-or-vomiting').checked = +d["Nausea (finding) / Vomiting symptom (finding)"];
 				document.getElementById('headache').checked = +d["Headache (finding)"];
 				document.getElementById('shortness-of-breath-or-difficulty-breathing').checked = +d["Respiratory distress (finding)"];
-				document.getElementById('MC1').checked = +d["MC1"];
-				document.getElementById('MC2').checked = +d["MC2"];
-				document.getElementById('MC3').checked = +d["MC3"];
-				document.getElementById('MC4').checked = +d["MC4"];
+				
+				
+				
+				
 				document.getElementById('MC5').checked = +d["MC5"];
 				document.getElementById('MC6').checked = +d["MC6"];
 				document.getElementById('MC7').checked = +d["MC7"];
