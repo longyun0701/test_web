@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Fight-COVID</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta charset="utf-8">
+		<script type="text/javascript" src="src/d3.v5.min.js"></script>
+		<script type="text/javascript" src="src/d3-dsv.min.js"></script>
+		<script type="text/javascript" src="src/d3-fetch.min.js"></script>
+		<script type="text/javascript" src="src/d3-scale-chromatic.v1.min.js"></script>
+		<script type="text/javascript" src="src/d3-tip.min.js"></script>
+		<script type="text/javascript" src="src/topojson.v2.min.js"></script>
+
+  <style type="text/css">
+
+
+	</style>
+
+</head>
+
+<body>
+
+  <div class="grid-container">
+
+    <header class="header">
+      <div>
+        This is an APP for potential COVID-19 patients to get estimation and recommendation from clinician.
+      </div>
+    </header>
+
+    <main class="main">
+      <br><br><br>
+      I am a new patient. <br>
+       <a href="patient.html"> Enter my information </a> <br>
+      <br><br><br>
+
+      I am a returning patient. <br>
+         <div>Patient ID:</div>         
+	  <input class="input" id="patientId">
+            <div>Last name:</div>         
+	  <input class="input" id="lastName">       
+
+       <a href="patient.html"> Retrieve my information </a> <br>
+
+      <br><br><br>
+       I am a clinician <br>
+      <a href="clinician.html">Review patients</a>
+
+    </main>
+    <script type="text/javascript">
+
+
+                        d3.csv("src/patient_data.csv", function(csvdata) {
+                              return [    csvdata.Race,
+                                          csvdata.Gender];   }). then(function(data) { })
+    
+
+
+    </script>
+
+    
+
+
+  </div>
+
+</body>
+
+</html>
