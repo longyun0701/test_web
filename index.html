@@ -21,6 +21,12 @@
                        font-weight: bold;
                        }
 
+                  .no_match {
+                       font-family: sans-serif;
+                       font-size: 12px;
+                       fill: red;
+                       font-weight: bold;
+                       }	  
 
 	</style>
 
@@ -90,7 +96,7 @@
 					
 					if (flag == "") {
 						var svg_nomatch = d3.select(".no_match").append("svg").attr("width", w).attr("height", h);
-						svg.append("text").attr('fill','red').text("Invalid Patient ID or Last Name!");
+						svg.append("text").text("Invalid Patient ID or Last Name!");
 					}
 
 					else {
