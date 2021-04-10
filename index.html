@@ -64,7 +64,7 @@
 	    <div>Password:</div>
 	    <input class="input" id="clinicianPassword">
 	    <div class="clinician_button"> </div>
-      <a href="clinician.html">Review patients</a>
+      
 
     </main>
     <script type="text/javascript">
@@ -101,7 +101,7 @@
 					
 					if (flag == "") {
 						var svg_nomatch = d3.select(".no_match").append("svg");
-						svg.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
+						svg_nomatch.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
 					}
 
 					else {
@@ -120,14 +120,14 @@
                          }) // end of then 
     
                          var svg_clinician = d3.select(".clinician_button").append("svg").attr("width", w).attr("height", h);
-				svg.append("rect")
+				svg_clinician.append("rect")
 					.attr("x", "10%").attr("y", "10%").attr("width", "80%").attr("height", "80%").attr("fill", "blue");
 				
-				svg.append("text").attr("class","button_text")
+				svg_clinician.append("text").attr("class","button_text")
 					.attr("x", w/2).attr("y", h/2+6-1)
 					.text("Log In");
 				
-				svg.on("click", function() {
+				svg_clinician.on("click", function() {
 					var cId = document.getElementById("clinicianId").value;
 					var password = document.getElementById("clinicianPassword").value;
 			                if (cId == "admin" && password == "admin") {
