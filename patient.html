@@ -272,25 +272,25 @@ body {
       Symptoms
 
       <div class="main-overview">
-        
+  
         <div class="small-card">
-            <span><input type="checkbox" id="fever-or-chills">
-	          <label for="fever-or-chills">Fever or chills</label></span>
+            <span><input type="checkbox" id="Fever (finding) / Chill (finding)">
+	          <label for="Fever (finding) / Chill (finding)">Fever or chills</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="sore-throat">
-	          <label for="sore-throat">Sore throat</label></span>
+            <span><input type="checkbox" id="Streptococcal sore throat (disorder)">
+	          <label for="Streptococcal sore throat (disorder)">Sore throat</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="muscle-or-body-aches">
-	          <label for="muscle-or-body-aches">Muscle or body aches</label></span>
+            <span><input type="checkbox" id="Muscle pain (finding)">
+	          <label for="Muscle pain (finding)">Muscle or body aches</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="cough">
-	          <label for="cough">Cough</label></span>
+            <span><input type="checkbox" id="Cough (finding)">
+	          <label for="Cough (finding)">Cough</label></span>
         </div>
 
 	<div class="small-card">
@@ -465,10 +465,14 @@ body {
 				document.getElementById('breathing-rate').value = d["Respiratory rate"];
 				document.getElementById('sys-bp').value = d["Systolic Blood Pressure"];
 				document.getElementById('dia-bp').value = d["Diastolic Blood Pressure"];
-				document.getElementById('fever-or-chills').checked = +d["Fever (finding) / Chill (finding)"];
-				document.getElementById('sore-throat').checked = +d["Streptococcal sore throat (disorder)"];
-				document.getElementById('muscle-or-body-aches').checked = +d["Muscle pain (finding)"];
-				document.getElementById('cough').checked = +d["Cough (finding)"];
+				
+				var symptoms = ["Fever (finding) / Chill (finding)", "Streptococcal sore throat (disorder)", "Muscle pain (finding)", "Cough (finding)"
+					       ];
+				for (var j = 0; j< symptoms.length; j++) {
+					var s0 = symptoms[j];
+					document.getElementById(s0).checked = +d[s0];
+				}
+
 				document.getElementById('diarrhea').checked = +d["Diarrhea symptom (finding)"];
 				document.getElementById('new-loss-of-taste-or-smell').checked = +d["Loss of taste (finding)"];
 				document.getElementById('fatigue').checked = +d["Fatigue (finding)"];
