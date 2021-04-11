@@ -102,16 +102,13 @@
 					}
 					
 					if (flag == "") {
-						var svg_nomatch = d3.select(".no_match").append("svg_nomatch");
+						var svg_nomatch = d3.select(".no_match").append("svg");
 						svg_nomatch.append("text").attr("class","nomatch_text").text("Invalid Patient ID or Last Name!");
 					}
 
 					else {
 						window.location = "patient.html?pid="+flag;
 					}
-					
-			   
-					
 					
 				});
 				
@@ -121,7 +118,7 @@
 
                          }) // end of then 
     			 var w_ = 100, h_ = 40;
-                         var svg_clinician = d3.select(".clinician_button").append("svg_clinician").attr("width", w_).attr("height", h_);
+                         var svg_clinician = d3.select(".clinician_button").append("svg").attr("width", w_).attr("height", h_);
 				svg_clinician.append("rect")
 					.attr("x", "10%").attr("y", "10%").attr("width", "80%").attr("height", "80%").attr("fill", "blue");
 				
@@ -137,7 +134,7 @@
 					}
 
 					else {
-						var svg_nomatch_ = d3.select(".no_match_").append("svg_nomatch_");
+						var svg_nomatch_ = d3.select(".no_match_").append("svg");
 						svg_nomatch_.append("text").attr("class","nomatch_text").text("Invalid Log ID or Password!");
 						
 					}
