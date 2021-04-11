@@ -51,10 +51,11 @@
 				document.write("Select a patient to review <br>");
 				for (var i=0;i<n;i++){
 					pt = data[i];
-					document.write("<input type='radio' name='patient' value='" +  pt["Patient ID"]+ "'>" + pt["First name"] + " " + pt["Last name"] +"<br>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + pt[3] + " " + pt[2] +"<br>");
 				}
 				
 				document.write("</form>")
+				
 				
 				
 				
