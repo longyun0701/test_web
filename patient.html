@@ -492,20 +492,9 @@ body {
      					radios[3].checked = true;
 				}
 				
-				
-				document.getElementById('MC5').checked = +d["MC5"];
-				document.getElementById('MC6').checked = +d["MC6"];
-				document.getElementById('MC7').checked = +d["MC7"];
-				document.getElementById('MC8').checked = +d["MC8"];
-				document.getElementById('MC9').checked = +d["MC9"];
-				document.getElementById('MC10').checked = +d["MC10"];
-				document.getElementById('MC11').checked = +d["MC11"];
-				document.getElementById('MC12').checked = +d["MC12"];
-				document.getElementById('MC13').checked = +d["MC13"];
-				document.getElementById('MC14').checked = +d["MC14"];
-				document.getElementById('MC15').checked = +d["MC15"];
-				document.getElementById('MC16').checked = +d["MC16"];
-				document.getElementById('MC17').checked = +d["MC17"];
+				for (var i=5; i<18; i++) {
+					document.getElementById('MC'+i).checked = +d["MC"+i];
+				}
 			}
 				
 			
