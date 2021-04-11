@@ -147,7 +147,7 @@ body {
     <header class="header">
       <div>
         Patient ID:
-        <span class="banner-value" id="patient_id">..</span>
+        <span class="banner-value" id="Patient ID">..</span>
       </div>
     </header>
 
@@ -167,7 +167,7 @@ body {
           <div>Gender:</div>
 	    <div>
               <form name="drop" action="" method="">
-              <select id="gender"  name="gender"  style = "height:20px;font-size:14px;font-family:sans-serif;border-radius:1px">   
+              <select id="Gender"  name="Gender"  style = "height:20px;font-size:14px;font-family:sans-serif;border-radius:1px">   
               <option   value="F" selected="selected">Female</option>    
               <option   value="M">Male</option>      
               <option   value="O">Other</option>       
@@ -180,7 +180,7 @@ body {
         <div class="small-card">
           <div>Date of Birth:</div>
           yyyy：
-	<select id="dob_yyyy">
+	<select id="Birthdate_yyyy">
 	<script>
 	var a=new Date().getFullYear()
 	for(i=1900;i<a+1;i++)
@@ -188,14 +188,14 @@ body {
 	</script>
 	</select>
 	mm：
-	<select id="dob_mm">
+	<select id="Birthdate_mm">
 	<script>
 	for(i=1;i<13;i++)
 	document.write("<option value='"+i+"'>"+i+"</option>")
 	</script>
 	</select>
 	dd：
-	<select id="dob_dd">
+	<select id="Birthdate_dd">
 	<script>
 	for(i=1;i<32;i++)
 	document.write("<option value='"+i+"'>"+i+"</option>")
@@ -207,7 +207,7 @@ body {
           <div>Race:</div>
           <div>
               <form name="drop" action="" method="">
-              <select id="race"  name="race"  style = "height:20px;font-size:14px;font-family:sans-serif;border-radius:1px">   
+              <select id="Race"  name="Race"  style = "height:20px;font-size:14px;font-family:sans-serif;border-radius:1px">   
               <option   value="asian" selected="selected">Asian</option>    
               <option   value="black">Black</option>      
               <option   value="hispanic">Hispanic</option>
@@ -228,23 +228,23 @@ body {
 
         <div class="small-card">
           <div>Height (cm):</div>         
-	  <input class="vital-signs" id="height">
+	  <input class="vital-signs" id="Body Height">
           
         </div>
 
         <div class="small-card">
           <div>Weight (kg):</div>
-          <input class="vital-signs" id="weight">
+          <input class="vital-signs" id="Body Weight">
         </div>
 
         <div class="small-card">
-          <div>Oral Temperature (Celsius):</div>
-          <input class="vital-signs" id="oral-temperature">
+          <div>Body Temperature (Celsius):</div>
+          <input class="vital-signs" id="Body temperature">
         </div>
 
         <div class="small-card">
-          <div>Pulse Rate (beats/min):</div>
-          <input class="vital-signs" id="pulse-rate">
+          <div>Heart Rate (beats/min):</div>
+          <input class="vital-signs" id="Heart rate">
         </div>
 
       </div>
@@ -252,19 +252,19 @@ body {
       <div class="main-overview">
         <div class="small-card">
           <div>Systolic Blood Pressure (mmHg):</div>
-          <input class="vital-signs" id="sys-bp">
+          <input class="vital-signs" id="Systolic Blood Pressure">
         </div>
         <div class="small-card">
           <div>Diastolic Blood Pressure (mmHg):</div>
-          <input class="vital-signs" id="dia-bp">
+          <input class="vital-signs" id="Diastolic Blood Pressure">
         </div>
         <div class="small-card">
-          <div>Breathing Rate (times/min):</div>
-          <input class="vital-signs" id="breathing-rate">
+          <div>Respiratory rate (times/min):</div>
+          <input class="vital-signs" id="Respiratory rate">
         </div>
         <div class="small-card">
           <div>Oxygen Saturation (%):</div>
-          <input class="vital-signs" id="oxygen-saturation">
+          <input class="vital-signs" id="Oxygen saturation in Arterial blood">
         </div>
       </div>
 
@@ -285,7 +285,7 @@ body {
 
 	<div class="small-card">
             <span><input type="checkbox" id="Muscle pain (finding)">
-	          <label for="Muscle pain (finding)">Muscle or body aches</label></span>
+	          <label for="Muscle pain (finding)">Muscle pain</label></span>
         </div>
 
 	<div class="small-card">
@@ -294,38 +294,38 @@ body {
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="diarrhea">
-	          <label for="diarrhea">Diarrhea</label></span>
+            <span><input type="checkbox" id="Diarrhea symptom (finding)">
+	          <label for="Diarrhea symptom (finding)">Diarrhea</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="new-loss-of-taste-or-smell">
-	          <label for="new-loss-of-taste-or-smell">New loss of taste or smell</label></span>
+            <span><input type="checkbox" id="Loss of taste (finding)">
+	          <label for="Loss of taste (finding)">Loss of taste</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="fatigue">
-	          <label for="fatigue">Fatigue</label></span>
+            <span><input type="checkbox" id="Fatigue (finding)">
+	          <label for="Fatigue (finding)">Fatigue</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="cogestion-or-runny-nose">
-	          <label for="cogestion-or-runny-nose">Cogestion or runny nose</label></span>
+            <span><input type="checkbox" id="Nasal congestion (finding)">
+	          <label for="Nasal congestion (finding)">Nasal congestion</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="nausea-or-vomiting">
-	          <label for="nausea-or-vomiting">Nausea or vomiting</label></span>
+            <span><input type="checkbox" id="Nausea (finding) / Vomiting symptom (finding)">
+	          <label for="Nausea (finding) / Vomiting symptom (finding)">Nausea or vomiting</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="headache">
-	          <label for="headache">Headache</label></span>
+            <span><input type="checkbox" id="Headache (finding)">
+	          <label for="Headache (finding)">Headache</label></span>
         </div>
 
 	<div class="small-card">
-            <span><input type="checkbox" id="shortness-of-breath-or-difficulty-breathing">
-	          <label for="shortness-of-breath-or-difficulty-breathing">Shortness of breath or difficulty breathing</label></span>
+            <span><input type="checkbox" id="Respiratory distress (finding)">
+	          <label for="Respiratory distress (finding)">Respiratory distress</label></span>
         </div>
        
 
@@ -449,37 +449,36 @@ body {
 				if (pid!=d["Patient ID"]) continue;
 				
 				console.log(d);
-				document.getElementById('patient_id').innerHTML = pid;
-				document.getElementById('patient-name').value = d["First name"] + " " + d["Last name"];
-				document.getElementById('gender').value = d["Gender"];
-				document.getElementById('height').value = d["Body Height"];
-				document.getElementById('weight').value = d["Body Weight"];
-				document.getElementById('race').value = d["Race"];
-				DOB = d["Birthdate"].split("/");
-				document.getElementById('dob_yyyy').value = DOB[0];
-				document.getElementById('dob_mm').value = DOB[1];
-				document.getElementById('dob_dd').value = DOB[2];
-				document.getElementById('oral-temperature').value = d["Body temperature"];
-				document.getElementById('pulse-rate').value = d["Heart rate"];
-				document.getElementById('oxygen-saturation').value = d["Oxygen saturation in Arterial blood"];
-				document.getElementById('breathing-rate').value = d["Respiratory rate"];
-				document.getElementById('sys-bp').value = d["Systolic Blood Pressure"];
-				document.getElementById('dia-bp').value = d["Diastolic Blood Pressure"];
 				
-				var symptoms = ["Fever (finding) / Chill (finding)", "Streptococcal sore throat (disorder)", "Muscle pain (finding)", "Cough (finding)"
-					       ];
+				document.getElementById('patient_id').innerHTML = pid;
+				
+				var vitalSigns = ["Gender", "Race", "Body Height", "Body Weight", "Body temperature", "Heart rate", "Respiratory rate"
+						  , "Systolic Blood Pressure", "Diastolic Blood Pressure", "Oxygen saturation in Arterial blood"]
+				
+				for (var q = 0; q< vitalSigns.length; q++) {
+					var s0 = vitalSigns[q];
+					document.getElementById(s0).value = d[s0];
+				}
+				
+				document.getElementById('patient-name').value = d["First name"] + " " + d["Last name"];
+				
+				
+				
+				DOB = d["Birthdate"].split("/");
+				document.getElementById('Birthdate_yyyy').value = DOB[0];
+				document.getElementById('Birthdate_mm').value = DOB[1];
+				document.getElementById('Birthdate_dd').value = DOB[2];
+				
+				
+				var symptoms = ["Fever (finding) / Chill (finding)", "Streptococcal sore throat (disorder)", "Muscle pain (finding)", "Cough (finding)",
+					       "Diarrhea symptom (finding)", "Loss of taste (finding)", "Fatigue (finding)", "Nasal congestion (finding)", 
+						"Nausea (finding) / Vomiting symptom (finding)", "Headache (finding)", "Respiratory distress (finding)"];
+						
+				
 				for (var j = 0; j< symptoms.length; j++) {
 					var s0 = symptoms[j];
 					document.getElementById(s0).checked = +d[s0];
 				}
-
-				document.getElementById('diarrhea').checked = +d["Diarrhea symptom (finding)"];
-				document.getElementById('new-loss-of-taste-or-smell').checked = +d["Loss of taste (finding)"];
-				document.getElementById('fatigue').checked = +d["Fatigue (finding)"];
-				document.getElementById('cogestion-or-runny-nose').checked = +d["Nasal congestion (finding)"];
-				document.getElementById('nausea-or-vomiting').checked = +d["Nausea (finding) / Vomiting symptom (finding)"];
-				document.getElementById('headache').checked = +d["Headache (finding)"];
-				document.getElementById('shortness-of-breath-or-difficulty-breathing').checked = +d["Respiratory distress (finding)"];
 				
 				
 				var radios = document.getElementsByName('diabetes');
