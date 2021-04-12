@@ -34,9 +34,9 @@
 
 	    	<script type="text/javascript">
 			d3.csv("src/patient_data.csv", function(csvdata) {
-                              return [csvdata["Patient ID"],
-                                      csvdata["Last name"],
-				      csvdata["First name"],
+                              return {csvdata["Patient ID"],
+                                      csvdata["First name"] + " " +csvdata["Last name"],
+				      //csvdata["First name"],
 				      csvdata["Birthdate"],
 				      csvdata["Gender"],
 				      csvdata["Race"],
@@ -64,11 +64,11 @@
 					return dtDate;
 				}
 				
-				pt_reviewed.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
-				pt_pending.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
+				pt_reviewed.sort( function(a,b) {return str2date(a[6]) -  str2date(b[6])} );
+				pt_pending.sort( function(a,b) {return str2date(a[5]) -  str2date(b[5])} );
 				console.log(pt_pending);
 				
-				pt_pending = pt_pending.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
+				pt_pending = pt_pending.sort( function(a,b) {return str2date(a[5]) -  str2date(b[5])} );
 				console.log(pt_pending);
 				
 				
@@ -77,13 +77,13 @@
 				document.write("These patients haven't been reviewed or given a recommendation <br>");
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[2] + " "+ pt[1] + ", DOB: " + pt[3] + ", submitted on " + pt[6] + ", Pending for review <br>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "NameX: " + pt[1] + ", DOB: " + pt[3] + ", submitted on " + pt[6] + ", Pending for review <br>");
 				}
 				
 				document.write("These patients haven been reviewed, select if you want to review your recommendation <br>");
 				for (var i=0;i<pt_reviewed.length;i++){
 					pt = pt_reviewed[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[2] + " "+ pt[1] + ", DOB: " + pt[3] +", submitted on " + pt[6] + ", reviewed on " + pt[7] + "<br>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", DOB: " + pt[3] +", submitted on " + pt[6] + ", reviewed on " + pt[7] + "<br>");
 				}
 				
 				document.write("</form>")
