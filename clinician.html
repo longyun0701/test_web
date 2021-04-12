@@ -83,7 +83,13 @@
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
 					document.write("<tr>");
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", Age: " + pt[7] + ", submitted on " + pt[5] + ", Pending for review <br>");
+					document.write("<td>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1])
+					document.write("</td>");
+					document.write("<td> Age: " + pt[7] + "</td> <td>submitted on: " + pt[5] + "</td>");
+					//document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1])
+					//document.write("</td>");
+					//	+ ", Age: " + pt[7] + ", submitted on " + pt[5] + ", Pending for review <br>");
 					document.write("</tr>");
 				
 				}
