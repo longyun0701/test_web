@@ -57,11 +57,18 @@
 						pt_pending.push(data[i]);
 				}
 				
-				pt_reviewed.sort( (a,b)=>{return a[7] -  b[7]} );
-				pt_pending.sort( (a,b)=>{return a[6] -  b[6]} );
+				function str2date(str) {
+					//var strDate = str.split(" ");
+					var strDatepart = str.split("/");
+					var dtDate = new Date(strDatepart[0],strDatepart[1]-1,strDatepart[2]);
+					return dtDate;
+				}
+				
+				pt_reviewed.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
+				pt_pending.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
 				console.log(pt_pending);
 				
-				pt_pending = pt_pending.sort( (a,b)=>{return a[6] -  b[6]} );
+				pt_pending = pt_pending.sort( function(a,b) {return str2date(a[7]) -  str2date(b[7])} );
 				console.log(pt_pending);
 				
 				
