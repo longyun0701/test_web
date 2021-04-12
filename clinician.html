@@ -79,32 +79,38 @@
 				document.write("<form>");
 				document.write("<table>");
 				document.write("<tr>These patients haven't been reviewed or given a recommendation </tr>");
+				document.write("<tr><td>Select</td><td>Patient Name</td><td>Age</td><td>Submitted on</td>");
 				
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
 					document.write("<tr>");
 					document.write("<td>");
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1])
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>")
 					document.write("</td>");
-					document.write("<td> Age: " + pt[7] + "</td> <td>submitted on: " + pt[5] + "</td>");
-					//document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1])
-					//document.write("</td>");
-					//	+ ", Age: " + pt[7] + ", submitted on " + pt[5] + ", Pending for review <br>");
+					document.write("<td>" + pt[1] + "</td> <td>" + pt[7] + "</td> <td>" + pt[5] + "</td>");
 					document.write("</tr>");
-				
 				}
 				document.write("</table>");
 				document.write("</form>");
 				
 				
 				document.write("<form>");
-				document.write("These patients haven been reviewed, select if you want to review your recommendation <br>");
+				document.write("<table>");
+				document.write("<tr>These patients have been reviewed, select if you want to review/modify your recommendation </tr>");
+				document.write("<tr><td>Select</td><td>Patient Name</td><td>Age</td><td>Submitted on</td><td>Reviewed on</td>");
+
 				for (var i=0;i<pt_reviewed.length;i++){
 					pt = pt_reviewed[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", Age: " + pt[7] +", submitted on " + pt[5] + ", reviewed on " + pt[6] + "<br>");
+					document.write("<tr>");
+					document.write("<td>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>")
+					document.write("</td>");
+					document.write("<td>" + pt[1] + "</td> <td>" + pt[7] + "</td> <td>" + pt[5] + "</td> <td>" + pt[6] + "</td>");
+					document.write("</tr>");
 				}
-				
-				document.write("</form>")
+				document.write("</table>");
+				document.write("</form>");
+
 				
 			
 				
