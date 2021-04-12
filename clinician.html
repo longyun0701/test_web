@@ -47,16 +47,33 @@
 				
 				console.log(data);
 				var n = data.length;
+				var pt_reviewed = [];
+				var pt_pending = [];
+				
+				for (var i=0;i<n;i++) {
+					if (data[i][7].length>1)
+						pt_reviewed.push(data[i]);
+					else
+						pt_pending.push(data[i]);
+				}
+				
+				
 				document.write("<form>");
-				document.write("Select a patient to review <br>");
-				for (var i=0;i<n;i++){
-					pt = data[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + pt[3] + " " + pt[2] +"<br>");
+				document.write("These patients haven't been reviewed or given a recommendation <br>");
+				for (var i=0;i<pt_pending.length;i++){
+					pt = pt_pending[i];
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + pt[2] + " " + pt[3] + ", submitted on " + pt[6] +"<br>");
+				}
+				
+				document.write("These patients haven been reviewed, select if you want to review your recommendation <br>");
+				for (var i=0;i<pt_reviewed.length;i++){
+					pt = pt_reviewed[i];
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + pt[2] + " " + pt[3] + ", reviewed on " + pt[7] + "<br>");
 				}
 				
 				document.write("</form>")
 				
-				
+			
 				
 				
 				
