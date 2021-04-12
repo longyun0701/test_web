@@ -1,0 +1,163 @@
+/*header*/
+
+*{
+ margin:0;
+ padding:0;
+
+ }
+ 
+body{
+
+background-color:#ADD8E6;
+ font-family:Arial;
+ font-size:16px;
+ overflow-y: scroll;
+
+ }
+ 
+ #all{
+ background-color:white;
+ width:940px;
+margin: 0 auto;
+ min-height:1000px;
+ }
+ 
+ p,li,h1,h2,h3,h4{
+ margin-bottom:5px;
+ }
+ 
+ hr{
+ margin-bottom:20px;
+ }
+ 
+ td{
+ border: 1px solid black;
+ border-left-color:white;
+ border-right-color:white;
+ border-top-color:white; 
+ }
+ 
+ .name_td{
+ width:120px;
+ height:20px;
+ font-weight:bold;
+ }
+ 
+ .age_td{
+ width:50px;
+ }
+
+ .date_td{
+ width:100px;
+ }
+ 
+ .li-main{
+ margin-top:15px;
+ }
+ 
+ .indented-para{
+ margin-left:5px;
+ }
+ 
+ ul{
+ margin-left:20px;
+ }
+ 
+#header img{
+float:left;
+height:80px;
+margin-left:40px;
+margin-top:10px;
+}
+
+#header{
+height:120px;
+width:940px;
+margin:0 auto;
+padding-top:10px;
+}
+
+#header h1{
+margin-right:40px;
+font-weight:900;
+font-size:40px;
+color:#003366;
+text-align:right;
+}
+
+#header p{
+margin-right:40px;
+font-weight:100;
+font-size:30px;
+color:#003366;
+text-align:right;
+}
+
+ /*menu styles*/
+
+#sticky_navigation_wrapper { 
+height:50px;}
+
+#sticky_navigation {
+height:50px; 
+background-color:white; 
+opacity:0.9; 
+}
+
+#sticky_navigation ul {
+list-style:none; 
+margin:0;
+padding:5px; }
+
+#sticky_navigation ul li {
+margin:0; 
+padding:0; 
+display:inline; }
+
+#sticky_navigation ul li a {
+display:block; 
+float:left; 
+margin:0 0 0 5px; 
+padding:0 20px; 
+height:40px;
+line-height:40px; 
+font-weight:bold; 
+color:#fff; 
+background:#004f66; 
+-moz-border-radius:3px; 
+-webkit-border-radius:3px; 
+border-radius:3px;}
+
+#sticky_navigation ul li a:hover, #sticky_navigation ul li a.selected {
+color:#fff; 
+background:#FF6600; }
+
+/*main page*/
+
+#main{
+margin-top:4%;
+margin-left:5%;
+margin-right:5%;
+}
+
+#section{
+margin:0;
+padding:0;
+}
+
+#mainPageImage{
+float:right;
+padding-left:10%;
+padding-bottom:10%;
+}
+
+/*footer page*/
+#footer {
+position:static;
+bottom:0;
+width:940px;
+margin:0 auto;
+text-align:right;
+background-color:#003366;
+color:white;
+}
