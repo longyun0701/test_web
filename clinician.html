@@ -77,12 +77,21 @@
 				
 				
 				document.write("<form>");
-				document.write("These patients haven't been reviewed or given a recommendation <br>");
+				document.write("<table>");
+				document.write("<tr>These patients haven't been reviewed or given a recommendation </tr>");
+				
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
+					document.write("<tr>");
 					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", Age: " + pt[7] + ", submitted on " + pt[5] + ", Pending for review <br>");
-				}
+					document.write("</tr>");
 				
+				}
+				document.write("</table>");
+				document.write("</form>");
+				
+				
+				document.write("<form>");
 				document.write("These patients haven been reviewed, select if you want to review your recommendation <br>");
 				for (var i=0;i<pt_reviewed.length;i++){
 					pt = pt_reviewed[i];
