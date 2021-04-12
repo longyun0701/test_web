@@ -34,7 +34,7 @@
 
 	    	<script type="text/javascript">
 			d3.csv("src/patient_data.csv", function(csvdata) {
-                              return {csvdata["Patient ID"],
+                              return [csvdata["Patient ID"],
                                       csvdata["First name"] + " " +csvdata["Last name"],
 				      //csvdata["First name"],
 				      csvdata["Birthdate"],
