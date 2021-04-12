@@ -57,6 +57,8 @@
 						pt_pending.push(data[i]);
 				}
 				
+				pt_reviewed.sort( (a,b)=>{return a[7] -  b[7]} );
+				pt_pending.sort( (a,b)=>{return a[6] -  b[6]} );
 				
 				document.write("<form>");
 				document.write("These patients haven't been reviewed or given a recommendation <br>");
