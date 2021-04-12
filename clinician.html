@@ -81,7 +81,7 @@
 				document.write("<form>");
 				document.write("<table>");
 				document.write("<tr>These patients haven't been reviewed or given a recommendation </tr>");
-				document.write("<tr><td>Select</td><td>Patient Name</td><td>Age</td><td>Submitted on</td>");
+				document.write("<tr><td>Select</td><td class='name_td'>Patient Name</td><td class='age_td'>Age</td><td class='date_td'>Submitted on</td>");
 				
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
@@ -89,7 +89,7 @@
 					document.write("<td>");
 					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>")
 					document.write("</td>");
-					document.write("<td>" + pt[1] + "</td> <td>" + pt[7] + "</td> <td>" + pt[5] + "</td>");
+					document.write("<td class='name_td'>" + pt[1] + "</td> <td class='age_td'>" + pt[7] + "</td> <td class='date_td'>" + pt[5] + "</td>");
 					document.write("</tr>");
 				}
 				document.write("</table>");
@@ -99,7 +99,7 @@
 				document.write("<form>");
 				document.write("<table>");
 				document.write("<tr>These patients have been reviewed, select if you want to review/modify your recommendation </tr>");
-				document.write("<tr><td>Select</td><td>Patient Name</td><td>Age</td><td>Submitted on</td><td>Reviewed on</td>");
+				document.write("<tr><td>Select</td><td class='name_td'>Patient Name</td><td class='age_td'>Age</td><td class='date_td'>Submitted on</td><td class='date_td'>Reviewed on</td>");
 
 				for (var i=0;i<pt_reviewed.length;i++){
 					pt = pt_reviewed[i];
@@ -107,7 +107,7 @@
 					document.write("<td>");
 					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>")
 					document.write("</td>");
-					document.write("<td>" + pt[1] + "</td> <td>" + pt[7] + "</td> <td>" + pt[5] + "</td> <td>" + pt[6] + "</td>");
+					document.write("<td class='name_td'>" + pt[1] + "</td> <td class='age_td'>" + pt[7] + "</td> <td class='date_td'>" + pt[5] + "</td> <td class='date_td'>" + pt[6] + "</td>");
 					document.write("</tr>");
 				}
 				document.write("</table>");
