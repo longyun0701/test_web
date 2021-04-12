@@ -51,7 +51,7 @@
 				var pt_pending = [];
 				
 				for (var i=0;i<n;i++) {
-					if (data[i][7].length>1)
+					if (data[i][6].length>1)
 						pt_reviewed.push(data[i]);
 					else
 						pt_pending.push(data[i]);
@@ -77,13 +77,13 @@
 				document.write("These patients haven't been reviewed or given a recommendation <br>");
 				for (var i=0;i<pt_pending.length;i++){
 					pt = pt_pending[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "NameX: " + pt[1] + ", DOB: " + pt[3] + ", submitted on " + pt[6] + ", Pending for review <br>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "NameX: " + pt[1] + ", DOB: " + pt[2] + ", submitted on " + pt[5] + ", Pending for review <br>");
 				}
 				
 				document.write("These patients haven been reviewed, select if you want to review your recommendation <br>");
 				for (var i=0;i<pt_reviewed.length;i++){
 					pt = pt_reviewed[i];
-					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", DOB: " + pt[3] +", submitted on " + pt[6] + ", reviewed on " + pt[7] + "<br>");
+					document.write("<input type='radio' name='patient' value='" +  pt[0]+ "'>" + "Name: " + pt[1] + ", DOB: " + pt[2] +", submitted on " + pt[5] + ", reviewed on " + pt[6] + "<br>");
 				}
 				
 				document.write("</form>")
