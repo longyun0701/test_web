@@ -1,50 +1,40 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-<title>Clinician View</title>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	
+<html lang="en">
+	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<title>Clinician View</title>
 		<script type="text/javascript" src="src/d3.v5.min.js"></script>
 		<script type="text/javascript" src="src/d3-dsv.min.js"></script>
 		<script type="text/javascript" src="src/d3-fetch.min.js"></script>
 		<script type="text/javascript" src="src/d3-scale-chromatic.v1.min.js"></script>
-		<script type="text/javascript" src="src/d3-tip.min.js"></script>
 		<script type="text/javascript" src="src/topojson.v2.min.js"></script>
-	
-	<style type="text/css">
-		
-		 .name_td{
+		<style type="text/css">
+			.name_td{
 			 width:120px;
 			 height:20px;
 			 font-weight:bold;
 			 }
-
-		.age_td{
+			.age_td{
 			 width:50px;
 			 }
-		
-		.date_td{
+			.date_td{
 			 width:100px;
 			 }
-
-
-	</style>
-
+		</style>
 </head>
 
 <body>
 
-  <div class="grid-container">
+  <div>
 
-    <header class="header">
+    <header>
       <div>
         Select a patient to review
       </div>
     </header>
 
-    <main class="main">
+    <main>
 
 	    	<script type="text/javascript">
 			d3.csv("src/patient_data.csv", function(csvdata) {
@@ -124,11 +114,6 @@
 				}
 				document.write("</table>");
 				document.write("</form>");
-
-				
-			
-				
-				
 				
 			}); // end of then
 			
@@ -148,7 +133,6 @@
 				
 
 	</script>
-
 
 
     </main>
